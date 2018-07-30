@@ -1,0 +1,4 @@
+full: true
+plugins:
+  - removeStyleElement
+  - removeAttrs: { attrs: '*:fill:((?!^none$).)*' }
