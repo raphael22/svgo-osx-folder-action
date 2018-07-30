@@ -6,7 +6,7 @@ on adding folder items to this_folder after receiving these_items
         set the file_path to the POSIX path of this_item
 
         try
-            do shell script "/bin/bash -l -c 'svgo --config="https://raw.githubusercontent.com/raphael22/svgo-osx-folder-action/master/svgo.yml" \"" & file_path & "\"'"
+            do shell script "/bin/bash -l -c 'svgo --config='{\""plugins\"":[\""removeStyleElement\"",{\""removeAttrs\"":{\""attrs\"":\""fill\""}}]}' \"" & file_path & "\"'"
         on error errStr number errorNumber
             display dialog "Error: " & errStr buttons {"OK"} with icon stop
             return number
